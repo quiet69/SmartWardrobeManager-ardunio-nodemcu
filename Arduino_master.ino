@@ -112,17 +112,7 @@ temp=0;
 
 void push()
 {    
-  //rtc_time = rtc.getTimeStr();
- //temp += dht.readTemperature();
-  //humi += dht.readHumidity();
-  //data="";
-//data+="GET /pushingbox?devid=v43B086F4888549C&time=" +rtc_time+ "&temp=" +String(temp)+ "&hum=" +String(humi); //GET request query to pushingbox API
-//data+=" HTTP/1.1"; 
-//Serial.println(data);
-//Serial.println(temp);
-//Serial.println(humi);
-//temp=0;
-//humi=0;
+  
 nodemcu.println("l");
 
 //Serial.println("sent signal");
