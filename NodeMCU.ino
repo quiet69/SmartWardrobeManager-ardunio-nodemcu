@@ -10,10 +10,10 @@ DHT dht(DHTPIN, DHTTYPE);
 String data;
 float temp=0,humi=0;
 const char WEBSITE[] = "api.pushingbox.com"; //pushingbox API server
-const String devid1 = "v43B086F4888549C";//device ID from Pushingbox 
-const String devid2 = "vD8BFFA4E5C749E7";  
-const char* MY_SSID = "connectesphello";
-const char* MY_PWD =  "12345678";
+const String devid1 = "Your_pushdeviceID";//device ID from Pushingbox 
+const String devid2 = "Your_emaildeviceID";  
+const char* MY_SSID = "Your_ssid";
+const char* MY_PWD =  "Your_password";
 boolean status = false;
 int z = 1;
 String b,yo;
@@ -48,7 +48,7 @@ void push()
  temp += dht.readTemperature();
   humi += dht.readHumidity();
   data="";
-data+="GET /pushingbox?devid=v43B086F4888549C&temp=" +String(temp)+ "&hum=" +String(humi); //GET request query to pushingbox API
+data+="GET /pushingbox?devid="+devid1+"&temp=" +String(temp)+ "&hum=" +String(humi); //GET request query to pushingbox API
 data+=" HTTP/1.1"; 
 delay(5000); //10 seconds, (sampling rate vs. service call quota)
 WiFiClient client;  //Instantiate WiFi object
@@ -119,7 +119,7 @@ else
 }
 temp=0;
 data="";
-data+="GET /pushingbox?devid=vD8BFFA4E5C749E7&data=" + String(yo); //GET request query to pushingbox API
+data+="GET /pushingbox?devid="+devid2+"&data=" + String(yo); //GET request query to pushingbox API
 data+=" HTTP/1.1";
  
   WiFiClient client;  //Instantiate WiFi object
@@ -161,7 +161,7 @@ void alert()
   yo="AlertSecurityBreach!!!";
 
 data="";
-data+="GET /pushingbox?devid=vD8BFFA4E5C749E7&data=" + String(yo); //GET request query to pushingbox API
+data+="GET /pushingbox?devid="+devid2+"&data=" + String(yo); //GET request query to pushingbox API
 data+=" HTTP/1.1";
 delay(5000);
   WiFiClient client;  //Instantiate WiFi object
