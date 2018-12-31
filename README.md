@@ -4,5 +4,5 @@ Source code for a prototype developed to
                                give smart clothing suggestions
                                push temperature and humidity data to cloud
                                send email alearts
-Using Arduino,NodeMCU and google sheets with api serivice pushingbox
+using Arduino,NodeMCU and Google sheets with api serivice pushingbox
                              
